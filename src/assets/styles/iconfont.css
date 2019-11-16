@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  /*这里修改了路径*/
+  src: url('./iconfont/iconfont.eot?t=1573837662480'); /* IE9 */
+  src: url('./iconfont/iconfont.eot?t=1573837662480#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANkAAsAAAAAB3AAAAMXAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDIgqCEIIIATYCJAMUCwwABCAFhG0HVRuRBiMRNmsOqpL9J4hjbAcwDZCgevRCqQgANqzDaMIcmvIpTe7mLbq6Loo9/KPmzOQ7+wpoDKAuEAER8AIAAAAAxMN/a6/3zcxuNvOTArlGRRVYEqKqUMCqVa5CtsL844syYRdVDACnnFDmicQcFGIk30GVg7EMxCdXaHLD7jfnj8CYqLminEVN/OGot0L6chkJrT4WQ30qsJy3g8iptambP86zadkEnEK/uDb/IP8wCiiCdR5IZV1qc6OFsv76n8tpEyiQ+a22yxibxprUUe8A44ACGmtTZAVUgtowdhPlQRwmUI1YJXZPD5/WKcCoQDy2927oUj5F0ZKd0JYsLOKDRpfepeE9/3xM2xAdSZOBicfv7rlt+9gvT/8/vUwxJOM5oS0jYxUKcbM0dlkWGimruxXr0CpCGpudjiniZtapruIfXpIVogUKh8B2SVVOS4IZBGMzDBJjswwy41X6QgobUMXETjyUiaO1oRVSW8APtYuEMaTohoqCGg4gCL9KV21Xk+W6zhypIQf+7D9nOE8XCALFuWT6nDfZXwbQYcozzd4VEPWTI+ApfVe69IkJLK1BcHR4t/6K52EO2SJSuZ3czKExkHALozkSSGs314acKJGfykNpGPLZ2ktIz5MhH6t9/hXf8evL277N37zrF/Bl7v/CjUW7fDqJ1pIXL2nZUFwZsDTFrsdi+8TGiBYkVBX/ZdciP8fRLm1dSOgsjSEZsByyzii2EFdBo2cTtDrboFpp3/KexZ7IogxihVcChAU+QjLPJ8gW6GML8Qc0lpmF1oLIUJ2NxRv2/DEI2xuR+mAl4fMFVmChkY17QfFCmVv2QUkZJ28UORuEyA+zyZkqFI0xxd1NzKxBE+YwFY5TWYZQEl6VYD9hLodBoMte5AvMKz0jUh+sJPh8ASuw0LQ593LvXyhzyz6oBtHh3yhytn0Q8YUtsDN10QpxLc+4u4kxa6AJczAVnCqDMQRleb+rEuxLekTKoUBC023V/vza/Bm3QAU2aiJFjhJNtHo3iPDhSewsOuLgAwbple+dWc0tpz5IJJUKAA==') format('woff2'),
+  url('./iconfont/iconfont.woff?t=1573837662480') format('woff'),
+  url('./iconfont/iconfont.ttf?t=1573837662480') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./iconfont/iconfont.svg?t=1573837662480#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* .iconarrow-down:before {
+  content: "\e6eb";
+}
+
+.iconcategory:before {
+  content: "\e6ec";
+}
+
+.iconarrow-lift:before {
+  content: "\e6ed";
+}
+
+.iconsearch:before {
+  content: "\e70a";
+} */
