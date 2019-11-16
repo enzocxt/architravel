@@ -1,0 +1,55 @@
+<template>
+  <div class="wrapper">
+    <swiper :options="swiperOption">
+      <!-- slides -->
+      <swiper-slide v-for="img of swiperList" :key="img.id">
+        <img class="swiper-img" :src="img.imgUrl" />
+      </swiper-slide>
+      <!-- Optional controls -->
+      <div class="swiper-pagination" slot="pagination"></div>
+      <!--
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
+      <div class="swiper-scrollbar"   slot="scrollbar"></div>
+      -->
+    </swiper>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomeSwiper',
+  data () {
+    return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true
+      },
+      swiperList: [{
+        id: '0001',
+        imgUrl: 'https://pic2.zhimg.com/v2-961efd2a7354d447d82f317bc0072c01_r.jpg'
+      }, {
+        id: '0002',
+        imgUrl: 'https://pic4.zhimg.com/80/v2-eb5e4f333abb700e449869c5803774eb_hd.jpg'
+      }, {
+        id: '0003',
+        imgUrl: 'https://pic4.zhimg.com/80/v2-cd0146e1eb7512126c190488b5e02333_hd.jpg'
+      }]
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  /* 样式穿透 */
+  .wrapper >>> .swiper-pagination-bullet-active
+    background: #fff
+  .wrapper
+    /* 注意：设置图片高度自适应的方法 */
+    overflow: hidden
+    width: 100%
+    height: 0
+    padding-bottom: 125%
+    .swiper-img
+      width: 100%
+</style>
