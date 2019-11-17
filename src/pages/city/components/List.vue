@@ -12,17 +12,27 @@
       <div class="area">
         <div class="title border-topbottom">Popular Cities</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item of pops" :key="item.id">
+          <div
+            class="button-wrapper"
+            v-for="item of pops"
+            :key="item.id"
+          >
             <div class="button">{{ item.spell }}</div>
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item, key) of cities" :key="key">
+      <div
+        class="area"
+        v-for="(item, key) of cities"
+        :key="key"
+        :ref="key"
+      >
         <div class="title border-topbottom">{{ key }}</div>
         <div class="item-list">
-          <div class="item border-bottom"
-               v-for="innerItem of item"
-               :key="innerItem.id"
+          <div
+            class="item border-bottom"
+            v-for="innerItem of item"
+            :key="innerItem.id"
           >
             {{ innerItem.spell }}
           </div>
@@ -38,10 +48,19 @@ export default {
   name: 'CityList',
   props: {
     pops: Array,
-    cities: Object
+    cities: Object,
+    letter: String
   },
   mounted () {
-    this.scroll = new Bscroll(this.$ref.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
@@ -78,4 +97,8 @@ export default {
           text-align: center
           border: .02rem solid #ccc
           border-radius: .06rem
+    .item-list
+      .item
+        line-height: .76rem
+        padding-left: .2rem
 </style>
