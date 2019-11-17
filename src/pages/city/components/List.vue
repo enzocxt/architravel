@@ -12,28 +12,19 @@
       <div class="area">
         <div class="title border-topbottom">Popular Cities</div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">Paris</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">Barcelona</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">London</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">Stockholm</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">Tokyo</div>
+          <div class="button-wrapper" v-for="item of pops" :key="item.id">
+            <div class="button">{{ item.spell }}</div>
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">Paris</div>
+      <div class="area" v-for="(item, key) of cities" :key="key">
+        <div class="title border-topbottom">{{ key }}</div>
+        <div class="item-list">
+          <div class="item border-bottom"
+               v-for="innerItem of item"
+               :key="innerItem.id"
+          >
+            {{ innerItem.spell }}
           </div>
         </div>
       </div>
@@ -45,6 +36,10 @@
 import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props: {
+    pops: Array,
+    cities: Object
+  },
   mounted () {
     this.scroll = new Bscroll(this.$ref.wrapper)
   }
@@ -58,7 +53,6 @@ export default {
       border-color: #ccc
     &:after
       border-color: #ccc
-
   .list
     overflow: hidden
     position: absolute
