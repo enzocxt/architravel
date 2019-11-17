@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="icon of page" :key="icon.id">
           <div class="icon-img">
@@ -17,57 +17,20 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      iconList: [
-        {
-          id: '0001',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'city'
-        }, {
-          id: '0002',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }, {
-          id: '0003',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }, {
-          id: '0004',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }, {
-          id: '0005',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }, {
-          id: '0006',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }, {
-          id: '0007',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }, {
-          id: '0008',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }, {
-          id: '0009',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }, {
-          id: '0010',
-          imgUrl: 'http://www.thearchitecturemaps.com/images/app%20icon%20800x800px.jpg',
-          desc: 'country'
-        }
-      ]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((icon, index) => {
+      this.list.forEach((icon, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
