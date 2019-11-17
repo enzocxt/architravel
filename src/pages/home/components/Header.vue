@@ -1,8 +1,10 @@
 <template>
   <div class="header">
-    <div class="header-left">
-      <div class="iconfont menu-icon">&#xe6ec;</div>
-    </div>
+    <router-link to="/city">
+      <div class="header-left" to="#/city">
+        <div class="iconfont menu-icon">&#xe6ec;</div>
+      </div>
+    </router-link>
     <div class="header-input">
       <div class="iconfont search-icon">&#xe70a;</div>
     </div>
@@ -27,6 +29,7 @@ export default {
     .header-left
       width: .64rem
       float: left
+      color: #fff
       .menu-icon
         text-align: center
         font-size: .4rem
