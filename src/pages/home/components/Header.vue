@@ -8,12 +8,22 @@
     <div class="header-input">
       <div class="iconfont search-icon">&#xe70a;</div>
     </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{ this.city }}
+        <span class="iconfont arrow-icon">&#xe6eb;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  computed: {
+    ...mapState(['city'])
+  }
 }
 </script>
 
@@ -47,4 +57,13 @@ export default {
       .search-icon
         padding-right: .4rem
         float: right
+    .header-right
+      min-width: 1.04rem
+      padding: 0 .1rem
+      float: right
+      text-align: center
+      color: #fff
+      .arrow-icon
+        margin-left: -.04rem
+        font-size: .24rem
 </style>
