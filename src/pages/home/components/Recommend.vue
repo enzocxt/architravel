@@ -2,7 +2,12 @@
   <div>
     <div class="recommend-title">Recommendations</div>
     <ul>
-      <li class="item border-bottom" v-for="item of list" :key="item.id">
+      <router-link tag="li"
+        class="item border-bottom"
+        v-for="item of list"
+        :key="item.id"
+        :to="'/detail/' + item.id"
+      >
         <div class="item-img-wrapper">
           <swiper :options="swiperOption">
             <swiper-slide v-for="img of item.imgList" :key="img.imgId">
@@ -11,7 +16,7 @@
           </swiper>
         </div>
         <p class="item-title">{{ item.title }}</p>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
